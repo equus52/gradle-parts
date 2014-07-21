@@ -1,0 +1,4 @@
+apply from: 'configurations.gradle'
+apply from: 'libraries.gradle'
+
+task wrapper(type: Wrapper) { gradleVersion = '2.0' }

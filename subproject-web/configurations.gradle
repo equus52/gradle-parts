@@ -1,0 +1,5 @@
+ext {
+  // web
+  contextRoot = project.name
+  webContentsRoot = 'WebContent'
+}

@@ -1,0 +1,3 @@
+include 'subproject-service'
+include 'subproject-web'
+include 'subproject-batch'

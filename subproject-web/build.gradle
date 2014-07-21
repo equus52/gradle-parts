@@ -1,0 +1,24 @@
+apply from: 'configurations.gradle'
+
+apply from: '../gradle/java.gradle'
+apply from: '../gradle/eclipse.gradle'
+apply from: '../gradle/eclipse-wtp.gradle'
+apply from: '../gradle/web.gradle'
+
+dependencies {
+  compile project(':subproject-service')
+  
+  compile libraries.jsr305
+  compile libraries.guava
+  compile libraries.logback_classic
+  compile libraries.groovy_all
+  compile libraries.lombok
+  compile libraries.guice  
+  
+  compile libraries.jersey_container_servlet
+  compile libraries.jersey_client
+  compile libraries.jersey_media_json_jackson
+
+  compile libraries.jetty_server
+  compile libraries.jetty_webapp
+}

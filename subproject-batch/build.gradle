@@ -1,0 +1,17 @@
+apply from: 'configurations.gradle'
+
+apply from: '../gradle/java.gradle'
+apply from: '../gradle/eclipse.gradle'
+apply from: '../gradle/application.gradle'
+
+dependencies {
+  compile project(':subproject-service')
+  
+  compile libraries.jsr305
+  compile libraries.guava
+  compile libraries.logback_classic
+  compile libraries.groovy_all
+  compile libraries.lombok
+  compile libraries.guice  
+  compile libraries.args4j
+}

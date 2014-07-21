@@ -1,0 +1,5 @@
+ext {
+  // application
+  app_mainClassName = 'gradle.parts.batch.Launcher'
+  app_baseName = project.name
+}

@@ -1,0 +1,12 @@
+// configuration settings
+// called one time from root project
+
+ext {
+  // product
+  groupId = 'gradle-parts'
+  artifactId = project.name
+  productVersion = '0.0.1-SNAPSHOT'
+  
+  // Java
+  jdkVersion = '1.8'
+}
