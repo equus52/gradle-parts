@@ -1,11 +1,20 @@
 // configuration settings
 // called one time from root project
 
+// environment name setting
+// ex. -Penv=dist
+if (project.hasProperty('env')) {
+    ext.envName = "$env"
+} else {
+    ext.envName = 'local'
+}
+
 ext {
   // product
   groupId = 'gradle-parts'
   artifactId = project.name
   productVersion = '0.0.1-SNAPSHOT'
+  configurationDir = new File(buildscript.sourceFile.parentFile, 'configuration')
   
   // Java
   jdkVersion = '1.8'
