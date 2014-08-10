@@ -8,10 +8,4 @@ apply from: '../gradle/eclipse-wtp.gradle'
 apply from: '../gradle/maven.gradle'
 
 dependencies {
-  compile libraries.jsr305
-  compile libraries.guava
-  compile libraries.logback_classic
-  compile libraries.groovy_all
-  compile libraries.lombok
-  compile libraries.guice  
 }
