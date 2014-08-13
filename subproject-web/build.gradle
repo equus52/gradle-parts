@@ -7,8 +7,9 @@ apply from: '../gradle/findbugs.gradle'
 apply from: '../gradle/eclipse-wtp.gradle'
 apply from: '../gradle/web.gradle'
 
+dependsOn project, project(':subproject-service')
+
 dependencies {
-  compile project(':subproject-service')
   
   compile libraries.jersey_container_servlet
   compile libraries.jersey_client

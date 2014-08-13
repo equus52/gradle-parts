@@ -12,14 +12,15 @@ file(envRootName).listFiles().each { file ->
   if (envName == defaultDir) {
     return
   }
+  if (envName.startsWith('.')) {
+    return
+  }
   envList +=[envName]
 }
 def confFileName = 'configuration.properties'
 
 // exclude files
-ext {
-  excludeFiles = [confFileName]
-}
+ext { excludeFiles = [confFileName] }
 excludeFiles += ['*.groovy']
 
 // environment config task
@@ -46,7 +47,7 @@ task environmentConfig() << {
       into("${buildDir}/${envRootName}/${envName}")
       exclude confFileName
     }
-    
+
     def confFile = new File("${tmpDir}/${envName}/${confFileName}")
     if (confFile.isFile()) {
       def props = new Properties()
