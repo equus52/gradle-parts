@@ -1,11 +1,14 @@
 // called from each project applying checkstyle plugin
 apply plugin: 'checkstyle'
 
-// configuration file settings
-def checkstyleDir = new File(configurationDir, 'checkstyle')
 checkstyle {
+  // configuration file settings
+  def checkstyleDir = new File(configurationDir, 'checkstyle')
   configFile = new File(checkstyleDir, "checkstyle.xml")
   configProperties.samedir = checkstyleDir
+
+  // not show violations on console
+  showViolations = false
 }
 
 // ignore failures

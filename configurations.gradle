@@ -12,6 +12,9 @@ if (!project.hasProperty('env')) {
 }
 
 ext {
+  // system
+  defaultEncoding = 'UTF-8'
+  
   // product
   groupId = 'gradle-parts'
   artifactId = project.name
@@ -22,3 +25,6 @@ ext {
   // Java
   jdkVersion = '1.8'
 }
+
+// encoding settings
+System.properties['file.encoding'] = defaultEncoding
