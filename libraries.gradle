@@ -69,7 +69,6 @@ allprojects {
   configurations {
     provided
     buildCompile
-    buildTestCompile
   }
 
 }
