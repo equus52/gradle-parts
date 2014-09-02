@@ -21,7 +21,7 @@ def confFileName = 'configuration.properties'
 
 // exclude files
 ext { excludeFiles = [confFileName] }
-excludeFiles += ['*.groovy']
+excludeFiles += ['**/*.groovy']
 
 // environment config task
 task environmentConfig() << {
