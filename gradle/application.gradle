@@ -20,8 +20,14 @@ task eachDistZip (dependsOn: [jar, startScripts]) << {
       appendix = envName
 
       // include environment config setting
+      dependingProjects.each { project ->
+        into('config') {
+          from "${rootProject.buildDir}/${envRootName}/${envName}/${project.name}"
+          include '**/*'
+        }
+      }
       into('config') {
-        from "${rootProject.buildDir}/${envRootName}/${envName}"
+        from "${rootProject.buildDir}/${envRootName}/${envName}/${project.name}"
         include '**/*'
       }
     }.execute()

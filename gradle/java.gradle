@@ -74,8 +74,14 @@ processResources.dependsOn rootProject.environmentConfig
 // copy environment config files for test
 processTestResources {
   doLast {
+    dependingProjects.each { project ->
+      copy {
+        from("${rootProject.buildDir}/${envRootName}/${env}/${project.name}")
+        into destinationDir
+      }
+    }
     copy {
-      from("${rootProject.buildDir}/${envRootName}/${env}")
+      from("${rootProject.buildDir}/${envRootName}/${env}/${project.name}")
       into destinationDir
     }
   }

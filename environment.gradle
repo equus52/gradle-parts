@@ -27,13 +27,13 @@ excludeFiles += ['**/*.groovy']
 task environmentConfig() << {
 
   envList.each { envName ->
-    def tmpDir = "${buildDir}/tmp/${envRootName}"
-    allprojects {
+    subprojects.each { project ->
       copy {
         from("${project.projectDir.getAbsolutePath()}/${mainConfigPath}")
-        into("${tmpDir}/${envName}")
+        into("${buildDir}/${envRootName}/${envName}/${project.name}")
       }
     }
+    def tmpDir = "${buildDir}/tmp/${envRootName}"
     copy {
       from("${envRootName}/${defaultDir}")
       into("${tmpDir}/${envName}")

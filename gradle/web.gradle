@@ -21,6 +21,17 @@ project.webAppDirName = webContentsRoot
 // each environment war task
 task eachWar (dependsOn: [classes]) << {
   envList.each { envName ->
+    def configurationPath = "${buildDir}/configuration/${envName}"
+    dependingProjects.each { project ->
+      copy {
+        from "${rootProject.buildDir}/${envRootName}/${envName}/${project.name}"
+        into configurationPath
+      }
+    }
+    copy {
+      from "${rootProject.buildDir}/${envRootName}/${envName}/${project.name}"
+      into configurationPath
+    }
     task("${envName}War", type: War) {
       // war name setting
       appendix = envName
@@ -30,7 +41,7 @@ task eachWar (dependsOn: [classes]) << {
 
       // include environment config setting
       into("WEB-INF/classes") {
-        from "${rootProject.buildDir}/${envRootName}/${envName}"
+        from configurationPath
         include '**/*'
       }
     }.execute()
