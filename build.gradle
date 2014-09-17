@@ -3,7 +3,7 @@ apply from: 'environment.gradle'
 apply from: 'libraries.gradle'
 apply from: 'allJavadoc.gradle'
 
-task wrapper(type: Wrapper) { gradleVersion = '2.0' }
+task wrapper(type: Wrapper) { gradleVersion = '2.1' }
 
 subprojects { ext.dependingProjects = new LinkedHashSet() }
 
