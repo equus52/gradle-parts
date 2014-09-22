@@ -7,7 +7,7 @@ apply from: '../gradle/findbugs.gradle'
 apply from: '../gradle/eclipse-wtp.gradle'
 apply from: '../gradle/web.gradle'
 
-dependsOn project, project(':subproject-service')
+dependsOn project(':subproject-service')
 
 dependencies {
   

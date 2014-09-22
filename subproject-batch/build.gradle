@@ -6,7 +6,7 @@ apply from: '../gradle/checkstyle.gradle'
 apply from: '../gradle/findbugs.gradle'
 apply from: '../gradle/application.gradle'
 
-dependsOn project, project(':subproject-service')
+dependsOn project(':subproject-service')
 
 dependencies {
 }
