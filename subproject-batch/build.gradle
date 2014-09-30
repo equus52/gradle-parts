@@ -1,10 +1,10 @@
 apply from: 'configurations.gradle'
 
-apply from: '../gradle/java.gradle'
-apply from: '../gradle/eclipse.gradle'
-apply from: '../gradle/checkstyle.gradle'
-apply from: '../gradle/findbugs.gradle'
-apply from: '../gradle/application.gradle'
+apply from: "${scriptPath}/java.gradle"
+apply from: "${scriptPath}/eclipse.gradle"
+apply from: "${scriptPath}/checkstyle.gradle"
+apply from: "${scriptPath}/findbugs.gradle"
+apply from: "${scriptPath}/application.gradle"
 
 dependsOn project(':subproject-service')
 
