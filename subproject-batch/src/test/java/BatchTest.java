@@ -12,7 +12,7 @@ public class BatchTest {
   @Test
   public void test() {
     String value = config.getString("value");
-    assertThat(value, is("main"));
+    assertThat(value, is("default"));
   }
 
 }
