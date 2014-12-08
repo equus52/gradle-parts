@@ -6,7 +6,6 @@ apply from: "${scriptPath}/checkstyle.gradle"
 apply from: "${scriptPath}/findbugs.gradle"
 apply from: "${scriptPath}/application.gradle"
 
-dependsOn project(':subproject-service')
-
 dependencies {
+  compile project(':subproject-service')
 }
